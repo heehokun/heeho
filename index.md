@@ -1,4 +1,3 @@
-```html
 <html>
 <head>
 <style></style>
@@ -43,4 +42,3 @@ function writeBullshit(){
 
 </body>
 </html>
-```
