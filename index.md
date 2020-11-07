@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+```html
+<html>
+<head>
+<style></style>
+</head>
+<body>
 
-You can use the [editor on GitHub](https://github.com/heehokun/heeho/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+<script>
+function rnd(min, max){
+	return Math.floor(Math.random() * (max - min) ) + min;	
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+var firstNameArr = ["James","John","Robert","Mary","Patricia","Jennifer","Michael","William","David","Linda","Elizabeth","Barbara","Richard","Joseph","Thomas","Susan","Jessica","Sarah","Charles","Karen","Christopher","Nancy","Daniel","Lisa","Matthew","Margaret","Anthony","Betty","Donald","Sandra","Mark","Ashley","Paul","Dorothy","Steven","Kimberly","Andrew","Emily","Kenneth","Donna","Joshua","Michelle","Kevin","Carol","Brian","Amanda","George","Melissa","Edward","Deborah","Cum","Obama","Flynn","Walter","Jonathan","Nathan","Tyler","Justin","Travis","Abel","Tom"];
+var lastNameArr  = ["Smith","Johnson","Anderson","Miller","Garcia","Hernandez","Lopez","Anderson","Martinez","Chavez","Olson","Williams","Nelson","Jones","Black","White","Barrett","Sullivan","Brown","Obama","Jefferson","Adams","Lee","Wong","Kim","Lincoln","Cum","Shitass","McCarthy","Kelly","Murphy","Ryan","O'Sullivan","Flynn","Scott","Scallion","Bruh"];
 
-### Markdown
+function lineNum(n){
+	var numArr = new Array(n);
+	numArr[0] = rnd(0,10);
+	
+	for (var i = 1; i<=n; i++) {
+		numArr[i] = numArr[i-1] + rnd(0,15);
+	}
+	globalNumArr = numArr;
+	document.getElementById("bruh").innerHTML = writeBullshit();
+}
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+function writeBullshit(){
+	var string = "";
+	for (var i = 0; i<globalNumArr.length; i++){
+		string = string + "Line " + globalNumArr[i] + ":found dead voter:firstname:" + firstNameArr[rnd(0,firstNameArr.length)].toUpperCase() + " lastname: " + lastNameArr[rnd(0,lastNameArr.length)].toUpperCase() + " year:19" + rnd(10,50) + " zipcode:8" + (rnd(8,10)*1000+rnd(0,199)) + " month " + rnd(1,12) + "<br/>"
+	}
+	return string;
+}
 
-# Header 1
-## Header 2
-### Header 3
+</script>
 
-- Bulleted
-- List
+<input type="number" id="num" value="50">
+<button onclick="lineNum(document.getElementById('num').value)">FIND DEAD VOTERS ! ! !</button>
+</input>
 
-1. Numbered
-2. List
+<p id="bruh"></p>
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+</body>
+</html>
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/heehokun/heeho/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
